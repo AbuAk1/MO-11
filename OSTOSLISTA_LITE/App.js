@@ -13,6 +13,7 @@ export default function App() {
   const [food, setFood] = useState("");
   const [maara, setMaara] = useState("");
   const [firstUnderlineColor, setFirstUnderlineColor] = useState("grey");
+  const [secondUnderlineColor, setsecondUnderlineColor] = useState("grey");
 
   useEffect(() => {
     const setupDatabase = async () => {
@@ -38,6 +39,14 @@ export default function App() {
 
   const handleFirstBlur = () => {
     setFirstUnderlineColor("grey");
+  };
+
+  const handleSecondFocus = () => {
+    setsecondUnderlineColor("#03fcfc");
+  };
+
+  const handleSecondBlur = () => {
+    setsecondUnderlineColor("grey");
   };
 
   const addItemToDatabase = async () => {
@@ -76,11 +85,11 @@ export default function App() {
           keyboardType="default"
         />
         <TextInput
-          style={[styles.inputfield, { underlineColorAndroid: firstUnderlineColor }]}
+          style={[styles.inputfield, { underlineColorAndroid: secondUnderlineColor }]}
           value={maara}
-          underlineColorAndroid={firstUnderlineColor}
-          onFocus={handleFirstFocus}
-          onBlur={handleFirstBlur}
+          underlineColorAndroid={secondUnderlineColor}
+          onFocus={handleSecondFocus}
+          onBlur={handleSecondBlur}
           onChangeText={(value) => setMaara(value)}
           placeholder="Quantity"
           keyboardType="default"
@@ -126,7 +135,8 @@ const styles = StyleSheet.create({
   },
   inputfield: {
     width: "100%",
-    borderWidth: 1,
+    borderWidth: 0.5,
+    borderBlockColor: "grey",
     padding: 10,
     marginVertical: 10,
   },
