@@ -12,10 +12,10 @@
     "expo": "^51.0.36",
     "expo-sqlite": "~14.0.6",
     "expo-status-bar": "~1.12.1",
+    "expo-updates": "~0.25.26",
     "ostoslista_lite": "file:",
     "react": "18.2.0",
-    "react-native": "0.74.5",
-    "expo-updates": "~0.25.26"
+    "react-native": "0.74.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
